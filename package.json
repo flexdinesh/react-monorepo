@@ -1,0 +1,36 @@
+{
+  "name": "react-monorepo",
+  "description": "React monorepo starter template",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "author": "flexdinesh@gmail.com",
+  "scripts": {
+    "clean:nm": "rimraf ./**/node_modules",
+    "clean": "rimraf ./**/dist ./**/.parcel-cache",
+    "dev": "npm run dev -w app",
+    "build:packages": "parcel build packages/*",
+    "build:ds": "parcel build design-system/*",
+    "lint": "eslint . --ext js,ts,tsx"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "design-system/**",
+      "app"
+    ]
+  },
+  "engines": {
+    "node": "^14.15 || ^16.13"
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": "^5.17.0",
+    "eslint": "^8.12.0",
+    "eslint-plugin-react-hooks": "^4.3.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-typescript-types": "2.4.1",
+    "rimraf": "^3.0.2",
+    "typescript": ">=3.0.0"
+  }
+}

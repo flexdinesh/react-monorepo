@@ -1,0 +1,5 @@
+{
+  "css.lint.unknownAtRules": "ignore", // tailwind
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2
+}

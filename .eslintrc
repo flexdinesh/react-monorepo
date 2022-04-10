@@ -1,0 +1,6 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["eslint-plugin-react-hooks"],
+  "extends": ["plugin:react-hooks/recommended"],
+  "ignorePatterns": ["node_modules/", "dist/"]
+}
