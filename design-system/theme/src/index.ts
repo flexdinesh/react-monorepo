@@ -25,7 +25,7 @@ const neon = {
 
 const colorSchemes = [honey, neon];
 
-const config = {
+export = {
   theme: {
     extend: {
       colors: {
@@ -67,8 +67,8 @@ const config = {
     },
   },
   plugins: [
-    plugin(({ addUtilities }: any) => {
-      const utilities = colorSchemes.map(c => {
+    plugin(({ addBase }: any) => {
+      const themeClasses = colorSchemes.map(c => {
         const { swatch: primarySwatch } = swatchGenerator(c.primary);
         const { swatch: secondarySwatch } = swatchGenerator(c.secondary);
         return {
@@ -103,9 +103,7 @@ const config = {
         };
       });
 
-      addUtilities(utilities);
+      addBase(themeClasses);
     }),
   ],
 } as const;
-
-export default config;
